@@ -7,7 +7,13 @@ jobs:
     steps:
       - name: list files and cope repo
         run: ls -la
-      - uses: actions/checkout@v7
+      #- uses: actions/checkout@v7
+      - name: copy files
+        run: |
+         git init
+         git remote add origit "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+         git fetch origin
+         git checkout main
       - name: Files list
         run: ls -la
 
