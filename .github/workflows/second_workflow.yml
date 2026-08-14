@@ -7,15 +7,14 @@ jobs:
     steps:
       - name: Display Node version on ubuntu
         run: node -v
-          
-  run-parallel-command: 
+  run-parallel-command:
     runs-on: windows-latest
-    steps: 
-     name: Display Node version on windows
-     run: node -v
+    steps:
+      - name: Display Node version on windows
+        run: node -v
   run-second-command:
     runs-on: macos-latest
     needs: run-first-command
-    steps: 
-      name: Display Node Versions on macos
-      run: node -v
+    steps:
+      - name: Display Node Versions on macos
+        run: node -v
